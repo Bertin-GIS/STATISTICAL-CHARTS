@@ -1,0 +1,1 @@
+Charts.js embedded in html file

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>My Chart.js Chart</title>
+</head>
+<body>
+
+  <div id="title22">
+    <marquee behavior="scroll" direction="left">
+      <h5 style="color: white; font-size: 22px;" class="text-white" ><b>Water Resources GIS Application</b></h5>
+    </marquee>
+  </div>
+
+  <style>
+    #title22 {
+      background-color: rgb(6, 6, 78);
+      border-style: solid;
+      border-color: black;
+      border-width: thin;
+    }
+  </style>
+
+<style>
+    #back-btn {
+    background: green;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #back-btn:hover {
+    opacity: 0.7;
+  }
+
+
+	#title {
+    background-color:#AED6F1;
+	border-style: solid;
+    border-color: black;
+    border-width: thin;
+   
+  }
+body{
+  background-image: url("1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1000px;
+  background-color: #AED6F1;
+}
+
+#conts {
+background: rgb(253, 220, 220);
+}
+</style>
+
+<div style="padding-left: 20px; margin-top: 20px;" class="reverse-btn">
+  <a id="back-btn" href="index.html">Back</a>
+</div>
+  <div id="conts" class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Ruvuma', 'Rufiji', 'Kagera', 'Pangani', 'Wami', 'Great Ruaha', 'Malagarasi', 'Mara', 'Ruvubu', 'Ruvu','lukuledi', 'Sigi'],
+        datasets:[{
+          label:'Lenght',
+          data:[
+          800,
+            600,
+            597,
+            500,
+            490,
+            475,
+            475,
+            395,
+            300,
+            285,
+            160,
+            100
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            '#FF0000',
+            '#0000FF',
+            '#FFFF00',
+            '#000000',
+            '#66BB55',
+            '#990099',
+            '#FFFF33',
+            '#FF0000',
+            '#FF0000',
+            '#000000',
+            '#0000FF',
+            '#FFFF00'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          fontColor: '#000000',
+          text:'Length of Major Rivers in Tanzania (Kilometres)',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+  </script>
+</body>
+</html>
